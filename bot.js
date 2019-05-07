@@ -31,7 +31,7 @@ client.on('message', message => {
 			})
 		})
 	}
-	if (message.content.substring(0,4) === ";say") {
+	if (message.content.substring(0,4) == ";say") {
 		if (!message.author === "NikitaPlays19") return;
 		message.delete()
 		message.channel.send(message.content.substring(5))
