@@ -36,5 +36,11 @@ client.on('message', message => {
 		message.delete()
 		message.channel.send(message.content.substring(5))
 	}
+	let kqa =  message.guild.roles.find('name','Админ')
+	if (!message.guild.member(message.author).Roles.find(kqa)) return;
+	if (message.content.substring(0,5) == ";kick") {
+		message.delete()
+		const user = message.mentions.users.first();
+	}
 });
 client.login(process.env.BOT_TOKEN) 
