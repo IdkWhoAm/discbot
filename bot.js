@@ -3,8 +3,8 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log('I am ready!');
-    bot.user.setStatus('available')
-    bot.user.setPresence({
+    client.user.setStatus('available')
+    client.user.setPresence({
         game: {
             name: 'на тебя',
             type: "WATCHING",
