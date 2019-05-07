@@ -36,22 +36,5 @@ client.on('message', message => {
 		message.delete()
 		message.channel.send(message.content.substring(5))
 	}
-	let kqa =  message.guild.roles.find('name','Админ')
-	if (!message.guild.member(message.author).Roles.find(kqa)) return;
-	if (message.content.substring(0,5) == ";kick") {
-		message.delete()
-		const user = message.mentions.users.first();
-		if (!user) return message.channel.send('А где mention?')
-		const member = message.guild.member(user)
-		if (member) {
-			member.kick('Kicked by Artimouse Bot').then(() => {
-				message.channel.send('${user.tag} был кикнут... Дорога ему пухом...
-			}).catch(err => {
-					message.channel.send('Че-то там какая то ошибка.. Проверь иерархию...')
-				})
-		} else {
-			message.channel.send('Этот чел не у нас...')
-		}
-	}
 });
 client.login(process.env.BOT_TOKEN) 
