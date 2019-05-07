@@ -2,6 +2,8 @@ const Discord = require('discord.js')
 const client = new Discord.Client();
 client.on('ready', () => {
     console.log('Hello World!');
+	const chaso = member.guild.channels.find(ch => ch.name === 'логи');
+	chaso.send('Я жив!');
 	 client.user.setStatus('available');
     client.user.setPresence({
         game: {
