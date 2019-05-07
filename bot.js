@@ -5,7 +5,7 @@ client.on('ready', () => {
 	 client.user.setStatus('available');
     client.user.setPresence({
         game: {
-            name: 'на тебя';
+            name: 'на кого-то';
             type: "PLAYING";
         }
     });
