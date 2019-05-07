@@ -5,8 +5,8 @@ client.on('ready', () => {
 	 client.user.setStatus('available');
     client.user.setPresence({
         game: {
-            name: 'на тебя',
-            type: "PLAYING",
+            name: 'на тебя';
+            type: "PLAYING";
         }
     });
 });
@@ -41,6 +41,17 @@ client.on('message', message => {
 	if (message.content.substring(0,5) == ";kick") {
 		message.delete()
 		const user = message.mentions.users.first();
+		if (!user) return message.channel.send('А где mention?')
+		const member = message.guild.member(user)
+		if (member) {
+			member.kick('Kicked by Artimouse Bot').then(() => {
+				message.channel.send('${user.tag} был кикнут... Дорога ему пухом...
+			}).catch(err => {
+					message.channel.send('Че-то там какая то ошибка.. Проверь иерархию...')
+				})
+		} else {
+			message.channel.send('Этот чел не у нас...')
+		}
 	}
 });
 client.login(process.env.BOT_TOKEN) 
