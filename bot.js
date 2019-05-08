@@ -40,7 +40,7 @@ client.on('message', message => {
 		let iqo = message.guild.roles.find('name','Админ');
 		if (!message.guild.member(message.author).roles.has(iqo.id)) {
 			return message.channel.send('Недостаточно прав.')
-		}
+		};
 		message.channel.send('Окей, ща попробую...');
 		if (!message.mentions.users.first()) return message.channel.send('Эй, я не опознал этого игрока!');
 		if (!message.guild.member(message.mentions.users.first())) return message.channel.send('Но он не в нашем сервере!');
