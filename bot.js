@@ -41,11 +41,11 @@ client.on('message', message => {
 		if (!message.guild.member(message.author).roles.has(iqo.id)) {
 			return message.channel.send('Недостаточно прав.')
 		};
-		message.channel.send('Окей, ща попробую...');
 		if (!message.mentions.users.first()) return message.channel.send('Эй, я не опознал этого игрока!');
 		if (!message.guild.member(message.mentions.users.first())) return message.channel.send('Но он не в нашем сервере!');
-		message.guild.member(message.mentions.users.first()).kick('Плохо себя ввел...').then(() => {
-			message.channel.send('Ура! Я смог кикнуть ${user.tag}!')
+		message.channel.send('Окей, ща попробую...')
+		message.guild.member(message.mentions.users.first()).kick('BeingBad').then(() => {
+			message.channel.send('Ура! Я смог кикнуть этого чела!')
 		}).catch(err => {
 			message.channel.send('Ух, чет пошло не так')
 		})
