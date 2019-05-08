@@ -38,7 +38,7 @@ client.on('message', message => {
 	};
 	if (message.content.substring(0,5) == ";kick") {
 		let iqo = message.guild.roles.find('name','Админ');
-		if (!message.guild.member(message.author).roles.has(iqo)) {
+		if (message.guild.member(message.author).roles.has(iqo)) {
 			return message.channel.send('Недостаточно прав.')
 		}
 		message.channel.send('Окей, ща попробую...');
