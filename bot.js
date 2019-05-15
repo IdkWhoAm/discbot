@@ -49,7 +49,7 @@ client.on('message', message => {
 		}).catch(err => {
 			message.channel.send('Ух, чет пошло не так')
 		})
-	}
+	};
 });
 client.on('guildMemberAdd', member => {
 	const channel = member.guild.channels.find(ch => ch.name === 'логи');
